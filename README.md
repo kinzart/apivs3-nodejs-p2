@@ -1,16 +1,28 @@
 1- Mkdir src/models
+
 2- touch name.js    //name = your schema name
+
 3- Create a schema into
+
 4- module.exports = mongoose.model('Name', schema);
+
 5- import in app.js 
+
 const Name = require('./models/name');
+
 // With that, in all the places that we invoke the Name model, we are referring to a structure that will be the same.
+
 6- mkdir src/controllers
+
 7- touch name-controller.js
+
 8- Call the model into 
+
 const mongoose = require('mongoose');
 const Name = mongoose.model('Name');
+
 9- Create a method to list (async)
+
 exports.listName = async (req, res) => {
   try {
     const data = await Name.find({});
@@ -19,7 +31,9 @@ exports.listName = async (req, res) => {
     res.status(500).send({message: 'Fail, try again'});
   }
 };
+
 10- Create a instance (object) to model
+
 exports.createName = async (req, res) => {
   try {
     const name = new Name({ //for example:
@@ -37,7 +51,9 @@ exports.createName = async (req, res) => {
 
 
 11- create a file name-routes.js into src/routes
+
 12- into:
+
 const express = require('express');
 const router = express.Router();
 const nameController = require('../controllers/name-controller');
@@ -49,9 +65,21 @@ module.exports = router;
 
 
 13- into app.js:
+
 //in load routes:
 const orderRoutes = require('./routes/order-routes');
 app.use('/order', orderRoutes);
+
+
+14- Test in postman
+  GET: http://localhost:3000
+  
+   GET: http://localhost:3000/name
+   
+15- POST: http://localhost:3000/name
+     body -> raw -> JSON
+sintaxe: 
+
 
 
 
