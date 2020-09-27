@@ -1,3 +1,14 @@
+npm install
+//first thing to do
+
+This tutorial exemplifies what I've done since apivs3-nodejs parte1 until now.
+
+
+"name" is editable, for example I chose "order", just check where these changes are and understand
+
+
+
+
 1- Mkdir src/models
 
 2- touch name.js    //name = your schema name
@@ -41,9 +52,9 @@ exports.createName = async (req, res) => {
       number: req.body.number
     });
 
-    await name.save();
+   await name.save();
 
-    res.status(201).send({message: 'Create is done'});
+   res.status(201).send({message: 'Create is done'});
   } catch (e) {
     res.status(500).send({message: 'Fail'});
   }
@@ -80,6 +91,12 @@ app.use('/order', orderRoutes);
      body -> raw -> JSON
 sintaxe: 
 
+{
+    "client": "Joseph",
+    "address": "Deathwhite Street, 46, Broklin",
+    "contact": "142789753452",
+    "order": "I want some fries and a hot burguer, very well... i dont wanna wait, so run!"
+}
 
 
 
