@@ -116,9 +116,9 @@ sintaxe:
 
     HTTP STATUS
 
-    200: tudo OK
-    201: criado
-    400: sua requisição tem algum problema
-    404: o conteúdo que você pediu não foi encontrado
-    500: deu um problema no nosso servidor
-    503: serviço inoperante
+    200: all OK
+    201: Is create
+    400: Your request has a problem
+    404: the data is not found
+    500: has a problem in our server
+    503: service is not work
